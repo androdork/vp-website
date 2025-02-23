@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="<%= baseUrl %>">
+    <title>Viewing Party - <%= title%></title>
+    <link rel="icon" href="assets/logo/favicon-dark.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/lib/bs-theme.js"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+</head>
+<body>
+    <div class="overflow-auto w-100" style="min-height: 100% !important;">
+        <header class="border-bottom sticky-top bg-body">
+            <div class="container d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center w-100">
+                    <a href="/" class="me-3">
+                        <img src="assets/logo/logo.png" alt="Viewing Party" class="img-fluid" width="150">
+                    </a>
+                    <nav class="d-flex align-items-center w-100 mt-1">
+                        <a href="/about" class="nav-link me-3">About</a>
+                        <a href="/getting-started" class="nav-link me-3">Getting Started</a>
+                        <a href="/faqs" class="nav-link me-3">FAQs</a>
+                    </nav>
+                </div>
+                <div class="d-flex align-items-cente w-100r">
+                    <button id="Login" type="button" class="btn btn-sm btn-secondary rounded-pill px-4 fw-bold d-none">Login</button>
+                    <button id="triggerThemeChange" class="btn btn-sm btn-secondary ms-3 btn-dark"><i class="fas fa-sun"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <main class="w-100 h-100">
+            <!-- Introduction -->
+            <section class="" style="background-image: url('assets/home/banner.jpg');">
+                <!-- <img src="assets/home/banner.jpg" alt="banner" class="img-fluid"> -->
+                <div class="container py-5">
+                    <div class="start-0 w-100 w-sm-75 w-md-50 d-flex flex-column mx-auto align-items-center text-center px-2 px-md-0">
+                        <!-- Title -->
+                        <h2 class="display-4 fw-bold mb-4">
+                            Watch movies, shows, sports and other events together with friends or viewers all around the world
+                        </h2>
+                        <!-- Description -->
+                        <p class="display-6 mb-5">
+                            ViewingParty allows people to watch video streams legally in sync with others. Experience streamed content with friends or a whole community. Gasp and laugh with fellow fans in the digital format of highly anticipated theatre premiers.
+                        </p>
+                        <!-- Discover Button -->
+                        <a href="https://chrome.google.com/webstore/detail/viewing-party/pffaegjjkopdniooioigjfjkncgfiokl" target="_blank" data-host-party="" class="btn btn-lg btn-outline-primary rounded-pill px-3 px-md-5">
+                            Start Watching
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Features -->
+            <section class="pt-5 bg-dark-shades border-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 mb-5">
+                            <h2 class="display-6 fw-bold text-center">
+                                What <span class="text-primary">ViewingParty</span> Offers
+                            </h2>
+                        </div>
+                        <div class="row mx-auto py-5">
+                            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-5 mb-lg-0 mx-auto mx-sm-0">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <img data-src="assets/home/friends.jpg" alt="Join a Community" class="w-100 rounded" style="transform: translateY(-20%)">
+                                        <h5 class="card-title">Join a Community</h5>
+                                        <p class="card-text">
+                                            Meet people with similar media interests and experience content together.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-5 mb-lg-0 mx-auto mx-sm-0">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <img data-src="assets/home/marathon.jpg" alt="Watch a Marathon" class="w-100 rounded" style="transform: translateY(-20%)">
+                                        <h5 class="card-title">Watch a Marathon</h5>
+                                        <p class="card-text">
+                                            Stop binge watching alone, bring family, friends or pick one of the many ongoing sessions here on ViewingParty.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-5 mb-lg-0 mx-auto mx-sm-0">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <img data-src="assets/home/dj.jpg" alt="DJ Music Streams" class="w-100 rounded" style="transform: translateY(-20%)">
+                                        <h5 class="card-title">DJ Music Streams</h5>
+                                        <p class="card-text">
+                                            Whether through YouTube or Spotify playlists, you can join or create a virtual music party and jam out with others.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3 mb-5 mb-md-5 mb-lg-0 mx-auto mx-sm-0">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <img data-src="assets/home/vote.jpg" alt="Vote on the next viewing" class="w-100 rounded" style="transform: translateY(-20%)">
+                                        <h5 class="card-title">Vote on the next viewing</h5>
+                                        <p class="card-text">
+                                            After every viewing, the session will prompt our voting systems. Vote on the next content whether it be a movie, song, clip etc. You can also vote on a discussion period to chat with others on your experience.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Public Parties -->
+            <section id="PublicParties" class="my-5 d-none">
+                <div class="container">
+                    <h2 class="mb-4 text-center text-md-start">Public Watch Parties</h2>
+                    <div id="publicWatchParties" class="row">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Available Movies -->
+            <section id="AvailableMovies" class="my-5 d-none">
+                <div class="container">
+                    <h2 class="mb-4 text-center text-md-start">Available Movies</h2>
+                    <div id="newMovies" class="row py-5">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Available Series -->
+            <section id="AvailableSeries" class="my-5 d-none">
+                <div class="container">
+                    <h2 class="mb-4 text-center text-md-start">Available Series</h2>
+                    <div id="newSeries" class="row py-5">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="w-100 text-center py-3 border-top">
+            <p class="m-0 px-3 px-md-0">
+                <small>
+                    © 2023 <a href="<%= baseUrl %>" class="text-primary">ViewingParty</a> - The Streaming Guide
+                </small>
+            </p>
+            <hr class="my-2 border-light">
+            <p class="m-0">
+                <small>
+                    <a href="<%= baseUrl %>/privacy-policy" class="text-muted text-underline">Privacy Policy</a>
+                </small>
+            </p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
