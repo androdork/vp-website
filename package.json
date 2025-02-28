@@ -36,6 +36,8 @@
     "browser-image-compression": "^2.0.2",
     "dotenv": "^16.4.5",
     "penrose-paradox": "^0.4.10",
-    "socket.io-client": "^4.7.5"
+    "socket.io-client": "^4.7.5",
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1"
   }
 }

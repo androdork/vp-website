@@ -1,11 +1,11 @@
-require("dotenv").config()
-const path = require("path")
-const webpack = require("webpack")
+require("dotenv").config();
+const path = require("path");
+const webpack = require("webpack");
 
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
-const env = process.env.NODE_ENV || "development"
+const env = process.env.NODE_ENV || "development";
 
 const pages = [
   {
@@ -38,7 +38,7 @@ const pages = [
     filename: "../privacy-policy/index.html",
     title: "Privacy Policy",
   }
-]
+];
 
 const htmlPlugins = pages.map(page => {
   return new HTMLWebpackPlugin({
@@ -48,7 +48,7 @@ const htmlPlugins = pages.map(page => {
       title: page.title,
       baseUrl: process.env.BASE_URL || "http://localhost:8080",
     }
-  })
+  });
 });
 
 module.exports = {
@@ -74,11 +74,19 @@ module.exports = {
           }
         }
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name][ext]'
+        }
+      },
     ]
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "build/js")
+    path: path.resolve(__dirname, "build/js"),
+    publicPath: "/js/"
   },
   devtool: "eval-source-map",
   plugins: [
@@ -92,7 +100,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: "./src/assets", to: "../assets" },
+        { from: "./src/assets", to: "assets" },
       ],
     }),
     ...htmlPlugins
@@ -102,7 +110,7 @@ module.exports = {
       directory: path.join(__dirname, "./build"),
     },
     compress: true,
-    port: 9000,
+    port: 8080,
     hot: true,
   },
 };

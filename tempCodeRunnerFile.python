@@ -1,0 +1,20 @@
+import os
+import time
+
+def play_sound():
+    # Play a sound (adjust the command for your OS)
+    # os.system("afplay /path/to/sound.mp3")  # macOS
+    os.system("start /path/to/sound.mp3")  # Windows
+    # os.system("aplay /path/to/sound.wav")  # Linux
+
+def copilot_suggestion_ready():
+    # Placeholder function to detect Copilot's accept button
+    # Replace with actual logic to detect the button
+    return False
+
+# Monitor Copilot activity
+while True:
+    if copilot_suggestion_ready():
+        play_sound()
+        break
+    time.sleep(1)

@@ -69,3 +69,20 @@ if (triggerThemeChange) {
   setButtonIcon(mode);
   triggerThemeChange.addEventListener("click", themeChangeHandler);
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggleButton = document.getElementById('triggerThemeChange');
+  const body = document.body;
+
+  themeToggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+  });
+
+  // Ensure the dark mode class is applied correctly.
+  const html = document.querySelector("html");
+  if (html.dataset.bsTheme === 'dark') {
+    body.classList.add('dark-mode');
+  } else {
+    body.classList.remove('dark-mode');
+  }
+});

@@ -1,0 +1,13 @@
+body {
+  /* ...existing code... */
+}
+
+body.dark-mode {
+  background-color: pink; /* Set background color to pink in dark mode for testing */
+  /* ...existing code... */
+}
+
+.bg-dark-shades {
+  background-color: pink !important; /* Ensure dark mode background is pink for testing */
+  /* ...existing code... */
+}
