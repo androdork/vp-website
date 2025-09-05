@@ -34,7 +34,7 @@
   "dependencies": {
     "axios": "^1.7.2",
     "browser-image-compression": "^2.0.2",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.6.1",
     "penrose-paradox": "^0.4.10",
     "socket.io-client": "^4.7.5",
     "css-loader": "^6.7.1",
